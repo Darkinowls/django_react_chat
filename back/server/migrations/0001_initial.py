@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -18,7 +17,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False,
+                                           verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('description', models.TextField(blank=True, null=True)),
             ],
@@ -26,22 +26,31 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Server',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False,
+                                           verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('description', models.TextField(blank=True, null=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='server.category')),
-                ('member', models.ManyToManyField(related_name='server_member', to=settings.AUTH_USER_MODEL)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='server_owner', to=settings.AUTH_USER_MODEL)),
+                ('category', models.ForeignKey(blank=True, null=True,
+                                               on_delete=django.db.models.deletion.CASCADE,
+                                               to='server.category')),
+                ('member',
+                 models.ManyToManyField(related_name='server_member', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                            related_name='server_owner',
+                                            to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
             name='Channel',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False,
+                                           verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('topic', models.CharField(max_length=100)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
-                ('server', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.server')),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                            to=settings.AUTH_USER_MODEL)),
+                ('server', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                             to='server.server')),
             ],
         ),
     ]

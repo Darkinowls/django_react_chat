@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('server', '0001_initial'),
     ]
@@ -14,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='server',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                    to='server.category'),
         ),
     ]
