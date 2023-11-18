@@ -27,7 +27,7 @@ class Server(models.Model):
 class Channel(models.Model):
     name = models.CharField(max_length=100)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    server = models.ForeignKey(Server, on_delete=models.CASCADE)
+    server = models.ForeignKey(Server, on_delete=models.CASCADE, related_name='channel_server')
     topic = models.CharField(max_length=100)
 
     def save(
