@@ -2,6 +2,7 @@ import {Box,} from "@mui/material";
 import PrimaryAppBar from "./templates/PrimaryAppBar";
 import PrimaryDraw from "./templates/PrimaryDraw.tsx";
 import SecondaryDraw from "./templates/SecondaryDraw.tsx";
+import Main from "./templates/Main.tsx";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <PrimaryAppBar></PrimaryAppBar>
             <PrimaryDraw></PrimaryDraw>
             <SecondaryDraw></SecondaryDraw>
+            <Main></Main>
         </Box>
     );
 };

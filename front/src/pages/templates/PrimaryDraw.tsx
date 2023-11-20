@@ -8,22 +8,32 @@ const PrimaryDraw = () => {
     const theme = useTheme()
     const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
 
-    const openedMixin = (isOpen: boolean) => () => ({
+    const openedMixin = () => ({
         transaction: theme.transitions.create("width", {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
         overflowX: "hidden",
-        width: isOpen ? theme.primaryDraw.width : theme.primaryDraw.closedWidth,
+        width: theme.primaryDraw.width,
     })
 
-    const Drawer = styled(MuiDrawer)(({theme, isOpen: boolean}) =>
+    const closedMixin = () => ({
+        transaction: theme.transitions.create("width", {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+        overflowX: "hidden",
+        width: theme.primaryDraw.closedWidth,
+    })
+
+    // @ts-ignore
+    const Drawer = styled(MuiDrawer)(({theme}) =>
         ({
             width: theme.primaryDraw.width,
             whiteSpace: "nowrap",
             boxSizing: "border-box",
-            ...(isOpen && {...openedMixin(true), "& .MuiDrawer-paper": openedMixin(true)}),
-            ...(!isOpen && {...openedMixin(false), "& .MuiDrawer-paper": openedMixin(false)}),
+            ...(isOpen && {...openedMixin(), "& .MuiDrawer-paper": openedMixin()}),
+            ...(!isOpen && {...closedMixin(), "& .MuiDrawer-paper": closedMixin()}),
         }))
 
     const toggleIsOpen = () => setIsOpen(!isOpen)
@@ -38,12 +48,12 @@ const PrimaryDraw = () => {
 
     return (
         <Drawer open={isOpen} variant={isExtraSmallScreen ? "temporary" : "permanent"}
-                   PaperProps={{
-                       sx: {
-                           mt: theme.primaryAppBar.height + "px",
-                           width: theme.primaryDraw.width,
-                       }
-                   }}
+                PaperProps={{
+                    sx: {
+                        mt: theme.primaryAppBar.height + "px",
+                        width: theme.primaryDraw.width,
+                    }
+                }}
         >
             <Box>
                 <Box sx={{position: "absolute", right: 0, top: 0}}>

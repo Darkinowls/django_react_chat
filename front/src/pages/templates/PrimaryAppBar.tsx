@@ -52,7 +52,7 @@ const PrimaryAppBar = () => {
                 >
                     <Box sx={{mb: theme.primaryAppBar.height + "px"}}> </Box>
                     {[...Array(100)].map((_, i) => (
-                        <Typography key={i}>Space {i}</Typography>
+                        <Typography key={i}>PRIMARY {i}</Typography>
                     ))}
                 </Drawer>
 
