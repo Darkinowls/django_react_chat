@@ -11,6 +11,8 @@ class ServerAdmin(admin.ModelAdmin):
     list_display = ['name', 'category', 'owner', 'description']
 
 
+
+
 admin.site.register(models.Category)
 admin.site.register(models.Server, ServerAdmin)
 admin.site.register(models.Channel)
