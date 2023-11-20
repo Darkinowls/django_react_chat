@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from django.core.exceptions import ValidationError
 
-ALLOWED_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.svg']
+ALLOWED_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png']
 
 
 def validate_icon_size(image):
