@@ -23,7 +23,7 @@ class ServerSerializer(serializers.ModelSerializer):
             data.pop("num_members")
         return data
 
-    def get_num_members(self, obj) -> int | None:
+    def get_num_members(self, obj):
         if hasattr(obj, "num_members"):
             return obj.num_members
         return None
