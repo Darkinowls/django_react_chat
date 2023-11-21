@@ -9,7 +9,7 @@ const Main = () => {
             display: "flex",
             flexDirection: "column",
             paddingTop: theme.primaryAppBar.height + "px",
-            overflow: "hidden",
+            overflowX: "hidden",
         }}>
             {
                 [...Array(10)].map((_, i) => (

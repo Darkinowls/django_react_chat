@@ -13,6 +13,7 @@ const PrimaryDraw = () => {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        height: `calc(100vh - ${theme.primaryAppBar.height}px)`,
         overflowX: "hidden",
         width: theme.primaryDraw.width,
     })
@@ -22,6 +23,7 @@ const PrimaryDraw = () => {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        height: `calc(100vh - ${theme.primaryAppBar.height}px)`,
         overflowX: "hidden",
         width: theme.primaryDraw.closedWidth,
     })

@@ -2,6 +2,7 @@ from django.db.models import Count
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError, AuthenticationFailed
 from rest_framework.generics import get_object_or_404
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
@@ -21,6 +22,7 @@ class ServerViewSet(viewsets.ViewSet):
 
     model = Server
     queryset = Server.objects.all()
+    permission_classes = [IsAuthenticated]
 
     def retrieve(self, request: Request, pk=None):
         """

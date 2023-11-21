@@ -1,26 +1,23 @@
-import enum
-import os
-
 from django.conf import settings
 from django.db import models
-from django.dispatch import receiver
 from rest_framework.generics import get_object_or_404
 
-from server.folder_handler import get_image_path, Folder
+from server.folder_handler import prepare_category_icon_path, \
+    prepare_channel_icon_path, prepare_channel_banner_path
 from server.validators.image_validators import validate_icon_size, validate_image_file_extension
 
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
-    icon = models.FileField(upload_to=get_image_path(Folder.CATEGORY_ICON), blank=True, null=True)
+    icon = models.FileField(upload_to=prepare_category_icon_path, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.id:
             old_category: Category = get_object_or_404(Category, id=self.id)
             if old_category.icon != self.icon:
                 old_category.icon.delete(save=False)
-                super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -43,11 +40,11 @@ class Channel(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     server = models.ForeignKey(Server, on_delete=models.CASCADE, related_name='channel_server')
     topic = models.CharField(max_length=100)
-    banner = models.ImageField(upload_to=get_image_path(Folder.CHANNEL_BANNER),
+    banner = models.ImageField(upload_to=prepare_channel_banner_path,
                                blank=True,
                                null=True,
                                validators=[validate_image_file_extension])
-    icon = models.ImageField(upload_to=get_image_path(Folder.CHANNEL_ICON),
+    icon = models.ImageField(upload_to=prepare_channel_icon_path,
                              blank=True,
                              null=True,
                              validators=[validate_icon_size, validate_image_file_extension])
@@ -55,6 +52,7 @@ class Channel(models.Model):
     def save(self, *args, **kwargs):
         self.name = self.name.lower()
         if self.id is None:
+            super().save(*args, **kwargs)
             return
 
         old_category: Channel = get_object_or_404(Channel, id=self.id)
@@ -62,7 +60,7 @@ class Channel(models.Model):
             old_category.icon.delete(save=False)
         if old_category.banner != self.icon:
             old_category.banner.delete(save=False)
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
