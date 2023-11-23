@@ -1,10 +1,10 @@
 import axios, {AxiosInstance} from "axios";
-import {BASE_URL} from "../config.ts";
+import {BASE_API_URL} from "../config.ts";
 import {useNavigate} from "react-router-dom";
 
 const useAxios = (): AxiosInstance => {
     const jwtAxios = axios.create({
-        baseURL: BASE_URL,
+        baseURL: BASE_API_URL,
     })
     const navigate = useNavigate()
 

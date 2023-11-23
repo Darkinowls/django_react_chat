@@ -22,10 +22,11 @@ from django.views.generic import RedirectView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 
-from server.views import ServerViewSet
+from server.views import ServerViewSet, CategoryViewSet
 
 router = DefaultRouter()
 router.register('server', ServerViewSet)
+router.register('category', CategoryViewSet)
 
 urlpatterns = [
     path('', RedirectView.as_view(url='api/ui')),
@@ -36,4 +37,4 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

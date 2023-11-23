@@ -1,9 +1,20 @@
-import {useEffect, useState} from 'react';
+import React, {FC, ReactElement, ReactNode, useEffect, useState} from 'react';
 import {Box, styled, useMediaQuery, useTheme} from "@mui/material";
-import PrimaryDrawButton from "../../components/PrimaryDrawButton.tsx";
 import MuiDrawer from "@mui/material/Drawer";
+import PrimaryDrawButton from "../../components/PrimaryDrawButton.tsx";
 
-const PrimaryDraw = () => {
+type Props = {
+    children: ReactNode
+}
+
+type ChildProps = {
+    isOpen: boolean
+    toggleIsOpen: () => void
+}
+
+type ChildElement = ReactElement<ChildProps>
+
+const PrimaryDraw: FC<Props> = ({children}) => {
     const [isOpen, setIsOpen] = useState(true)
     const theme = useTheme()
     const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down("sm"))
@@ -27,6 +38,7 @@ const PrimaryDraw = () => {
         overflowX: "hidden",
         width: theme.primaryDraw.closedWidth,
     })
+
 
     // @ts-ignore
     const Drawer = styled(MuiDrawer)(({theme}) =>
@@ -59,14 +71,15 @@ const PrimaryDraw = () => {
         >
             <Box>
                 <Box sx={{position: "absolute", right: 0, top: 0}}>
+
                     <PrimaryDrawButton isOpen={isOpen} toggleIsOpen={toggleIsOpen}/>
-                    {
-                        [...Array(100)].map((_, i) => (
-                            <Box key={i}>Space {i}</Box>
-                        ))
-                    }
 
                 </Box>
+                {React.Children.map(children, (child) => {
+                    return React.isValidElement(child) ?
+                        React.cloneElement(child as ChildElement, {isOpen}) :
+                        child
+                })}
             </Box>
         </Drawer>
     );

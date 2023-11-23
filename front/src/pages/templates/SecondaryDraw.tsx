@@ -1,24 +1,28 @@
 import {Box, useTheme} from "@mui/material";
+import {FC, ReactNode} from "react";
 
-const SecondaryDraw = () => {
+
+type Props = {
+    children: ReactNode
+}
+
+const SecondaryDraw: FC<Props> = ({children}) => {
 
 
     const theme = useTheme()
     return (
         <Box sx={{
             width: theme.secondaryDraw.width,
-            display: "block",
-            mt: theme.primaryAppBar.height + "px" ,
+            minWidth: theme.secondaryDraw.width,
+            display: {xs: "none", sm: "block"},
+            mt: theme.primaryAppBar.height + "px",
             borderRight: `1px solid ${theme.palette.divider}`,
             height: `calc(100vh - ${theme.primaryAppBar.height}px)`,
-            overflow: "auto",
+            overflowX: "hidden",
 
         }}>
-            {
-                [...Array(100)].map((_, i) => (
-                    <Box key={i}>SECONDARY {i}</Box>
-                ))
-            }
+            {children}
+
         </Box>
     );
 };

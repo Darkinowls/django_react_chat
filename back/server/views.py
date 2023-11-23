@@ -6,9 +6,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from server.models import Server
+from server.models import Server, Category
 from .schema import server_list_docs
-from .serializers import ServerSerializer
+from .serializers import ServerSerializer, CategorySerializer
+
+
+class CategoryViewSet(viewsets.ViewSet):
+    queryset = Category.objects.all()
+    model = Category
+
+    def list(self, r):
+        serializer = CategorySerializer(self.queryset, many=True)
+        return Response(serializer.data)
 
 
 class ServerViewSet(viewsets.ViewSet):
@@ -22,7 +31,8 @@ class ServerViewSet(viewsets.ViewSet):
 
     model = Server
     queryset = Server.objects.all()
-    permission_classes = [IsAuthenticated]
+
+    # permission_classes = [IsAuthenticated]
 
     def retrieve(self, request: Request, pk=None):
         """

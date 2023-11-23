@@ -8,7 +8,7 @@ import ExploreCategories from "../components/ExploreCategories.tsx";
 import ExploreServers from "../components/ExploreServers.tsx";
 
 
-const Home = () => {
+const Explore = () => {
     return (
         <Box sx={{display: "flex"}}>
             <CssBaseline></CssBaseline>
@@ -20,4 +20,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Explore;

@@ -1,7 +1,10 @@
-
 import {Box, useTheme} from "@mui/material";
+import {FC, ReactNode} from "react";
 
-const Main = () => {
+type Props = {
+    children: ReactNode
+}
+const Main: FC<Props> = ({children}) => {
     const theme = useTheme()
     return (
         <Box sx={{
@@ -11,11 +14,7 @@ const Main = () => {
             paddingTop: theme.primaryAppBar.height + "px",
             overflowX: "hidden",
         }}>
-            {
-                [...Array(10)].map((_, i) => (
-                    <Box key={i}>MAIN {i}</Box>
-                ))
-            }
+            {children}
         </Box>
     );
 };
