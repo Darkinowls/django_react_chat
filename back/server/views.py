@@ -50,7 +50,7 @@ class ServerViewSet(viewsets.ViewSet):
         """
         server = get_object_or_404(self.queryset, pk=pk)
         s = ServerSerializer(server)
-        return Response(s.data)
+        return Response([s.data])
 
     @server_list_docs
     def list(self, request: Request, *args, **kwargs):
@@ -99,8 +99,8 @@ class ServerViewSet(viewsets.ViewSet):
         queryset = self.queryset
 
         # Check user authentication
-        if (by_user or server_id) and not request.user.is_authenticated:
-            raise AuthenticationFailed("You must be logged in to use this feature")
+        # if (by_user or server_id) and not request.user.is_authenticated:
+        #     raise AuthenticationFailed("You must be logged in to use this feature")
 
         # Annotate queryset with the number of members if requested
         if with_num_members:
