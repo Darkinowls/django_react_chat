@@ -1,8 +1,9 @@
-import {AppBar, Box, Drawer, IconButton, Link, Toolbar, Typography, useMediaQuery, useTheme} from "@mui/material";
+import {AppBar, Box, Drawer, IconButton, Toolbar, Typography, useMediaQuery, useTheme} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import React, {useEffect, useState} from "react";
 import ExploreCategories from "../../components/ExploreCategories";
 import AccountButton from "../../components/AccountButton.tsx";
+import { Link } from "react-router-dom";
 
 const PrimaryAppBar = () => {
     const theme = useTheme()
@@ -68,7 +69,7 @@ const PrimaryAppBar = () => {
 
                 </Drawer>
 
-                <Link href={"/"} underline={"none"} color={"inherit"}>
+                <Link to={"/"} style={{textDecoration:"none", color:"inherit"}} >
                     <Typography variant="h6"
                                 sx={{display: {fontWeight: 700, letterSpacing: "-0.5px"}}}>DJChat</Typography>
                 </Link>

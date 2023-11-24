@@ -1,9 +1,8 @@
 import {useEffect} from 'react';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import useCrud from "../hooks/useCrud.ts";
 import {
     Box,
-    Link,
     Card,
     Container,
     Grid,
@@ -70,7 +69,7 @@ const ExploreServers = () => {
                                     flexDirection: "column",
                                     // backgroundImage: "none"
                                 }}>
-                                <Link href={`server/${server.id}`} style={{textDecoration: "none", color: "inherit"}}>
+                                <Link to={`server/${server.id}`} style={{textDecoration: "none", color: "inherit"}}>
 
                                     <CardMedia
                                         component={"img"}

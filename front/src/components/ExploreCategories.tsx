@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import useCrud from "../hooks/useCrud.ts";
 import {
     Box,
-    Link,
     List,
     ListItem,
     ListItemAvatar,
@@ -12,6 +11,7 @@ import {
     useTheme
 } from "@mui/material";
 import {BASE_URL} from "../config.ts";
+import {Link} from "react-router-dom";
 
 
 interface Category {
@@ -56,7 +56,7 @@ const ExploreCategories = () => {
                 {data.map((category) => (
                     <ListItem disablePadding key={category.id} sx={{display: "block"}} dense={true}>
 
-                        <Link href={`/category/${category.name}`} style={{textDecoration: "none", color: "inherit"}}>
+                        <Link to={`/category/${category.name}`} style={{textDecoration: "none", color: "inherit"}}>
                             <ListItemButton sx={{minHeight: 48}}>
                                 <ListItemAvatar sx={{minWidth: 0, mr: 1}}>
                                     <img src={BASE_URL + category.icon} alt={category.name}

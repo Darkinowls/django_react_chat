@@ -1,7 +1,6 @@
 import {
     Avatar,
     Box,
-    Link,
     List,
     ListItem, ListItemAvatar,
     ListItemText,
@@ -10,6 +9,7 @@ import {
 import useCrud from '../hooks/useCrud';
 import {FC, useEffect} from 'react';
 import {BASE_URL} from "../config.ts";
+import { Link } from 'react-router-dom';
 
 interface Server {
     id: string
@@ -62,7 +62,7 @@ const PopularChannels: FC<Props> = ({isOpen}) => {
 
 
                     <ListItem key={server.id} dense={true} sx={{display: "block"}}>
-                        <Link href={`/server/${server.id}`} style={{
+                        <Link to={`/server/${server.id}`} style={{
                             textDecoration: "none",
                             color: "inherit",
                             display: "flex"
