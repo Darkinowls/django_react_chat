@@ -27,7 +27,7 @@ interface Server {
 const ExploreServers = () => {
     const {categoryName} = useParams()
     const url = categoryName ? `server/?category=${categoryName}` : "server"
-    const {data, fetchCallback} = useCrud<Server>([], url)
+    const {prevData, fetchCallback} = useCrud<Server>([], url)
 
     useEffect(() => {
         fetchCallback()
@@ -60,7 +60,7 @@ const ExploreServers = () => {
                 </Typography>
 
                 <Grid container spacing={{xs: 0, sm: 2}}>
-                    {data.map((server) => (
+                    {prevData.map((server) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={server.id}>
                             <Card
                                 sx={{

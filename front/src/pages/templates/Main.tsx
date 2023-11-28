@@ -12,7 +12,7 @@ const Main: FC<Props> = ({children}) => {
             display: "flex",
             flexDirection: "column",
             paddingTop: theme.primaryAppBar.height + "px",
-            overflowX: "hidden",
+            overflow: "hidden",
         }}>
             {children}
         </Box>

@@ -35,3 +35,15 @@ server_list_docs = extend_schema(
         ),
     ],
 )
+
+message_list_docs = extend_schema(
+        description="Retrieve a list of messages for a specific channel.",
+        parameters=[
+            OpenApiParameter(
+                name="channel_id",
+                description="The ID of the channel.",
+                required=True,
+                type=int,
+            )
+        ]
+    )

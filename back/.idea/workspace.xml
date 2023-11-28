@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec9f68c3-0e1e-4e4a-af6b-9618a61c1b53" name="Changes" comment="chat basic capabilities">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/@types/message.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/components/MessageInterfaceChannels.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webchat/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webchat/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webchat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/components/ExploreCategories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/ExploreCategories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/pages/Server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/Server.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/PrimaryAppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/PrimaryAppBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/SecondaryDraw.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/SecondaryDraw.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +68,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PythonJob/DjangoReactChat/back&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/grid_modeling&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -253,7 +271,11 @@
       <workItem from="1700734743227" duration="390000" />
       <workItem from="1700735231323" duration="66000" />
       <workItem from="1700735706878" duration="11858000" />
-      <workItem from="1700834632406" duration="3082000" />
+      <workItem from="1700834632406" duration="8134000" />
+      <workItem from="1700851447804" duration="5531000" />
+      <workItem from="1701073771489" duration="4843000" />
+      <workItem from="1701101755310" duration="907000" />
+      <workItem from="1701160322289" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -343,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700844054365</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="chat basic capabilities">
+      <option name="closed" value="true" />
+      <created>1700844122795</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700844122795</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,8 +402,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webchat/consumer.py</url>
-          <line>15</line>
+          <line>20</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/views.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -25,11 +25,11 @@ type Props = {
 
 const PopularChannels: FC<Props> = ({isOpen}) => {
     const {
-        data, fetchCallback
+        prevData, fetchCallback
     } = useCrud<Server>([], "server")
 
     useEffect(() => {
-        fetchCallback().then(() => console.log(data))
+        fetchCallback().then(() => console.log(prevData))
     }, []);
 
 
@@ -58,7 +58,7 @@ const PopularChannels: FC<Props> = ({isOpen}) => {
             }}>
 
 
-                {data.map((server) => (
+                {prevData.map((server) => (
 
 
                     <ListItem key={server.id} dense={true} sx={{display: "block"}}>

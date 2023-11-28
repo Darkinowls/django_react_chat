@@ -14,7 +14,8 @@ const SecondaryDraw: FC<Props> = ({children}) => {
         <Box sx={{
             width: theme.secondaryDraw.width,
             minWidth: theme.secondaryDraw.width,
-            display: {xs: "none", sm: "block"},
+            display: {xs: "none", sm: "flex"},
+            flexDirection: "column",
             mt: theme.primaryAppBar.height + "px",
             borderRight: `1px solid ${theme.palette.divider}`,
             height: `calc(100vh - ${theme.primaryAppBar.height}px)`,

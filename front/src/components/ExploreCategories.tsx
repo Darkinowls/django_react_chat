@@ -24,7 +24,7 @@ interface Category {
 const ExploreCategories = () => {
 
     const {
-        data, fetchCallback
+        prevData, fetchCallback
     } = useCrud<Category>([], "category")
 
     const theme = useTheme()
@@ -53,7 +53,7 @@ const ExploreCategories = () => {
             <List sx={{
                 py: 0,
             }}>
-                {data.map((category) => (
+                {prevData.map((category) => (
                     <ListItem disablePadding key={category.id} sx={{display: "block"}} dense={true}>
 
                         <Link to={`/category/${category.name}`} style={{textDecoration: "none", color: "inherit"}}>

@@ -26,7 +26,7 @@ class Server(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
                               related_name='server_owner')
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField()
     member = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='server_member')
     icon = models.FileField(upload_to=prepare_server_icon_path, blank=True, null=True,
                             validators=[validate_icon_size, validate_image_file_extension])

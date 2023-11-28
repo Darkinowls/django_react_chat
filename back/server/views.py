@@ -1,4 +1,5 @@
 from django.db.models import Count
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError, AuthenticationFailed
 from rest_framework.generics import get_object_or_404
@@ -7,8 +8,9 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 
 from server.models import Server, Category
-from .schema import server_list_docs
-from .serializers import ServerSerializer, CategorySerializer
+from webchat.models import Message, Conversation
+from .schema import server_list_docs, message_list_docs
+from .serializers import ServerSerializer, CategorySerializer, MessageSerializer
 
 
 class CategoryViewSet(viewsets.ViewSet):
@@ -125,3 +127,31 @@ class ServerViewSet(viewsets.ViewSet):
         # Serialize the queryset and return the response
         s = ServerSerializer(queryset, many=True)
         return Response(s.data)
+
+
+class MessageViewSet(viewsets.ViewSet):
+    model = Message
+    queryset = Message.objects.all()
+
+    @message_list_docs
+    def list(self, request: Request, *args, **kwargs):
+        """
+                Retrieve a list of messages for a specific channel.
+
+                parameters:
+                  - name: channel_id
+                    description: The ID of the channel.
+                    required: true
+                    type: string
+                    in: query
+                """
+        channel_id = request.query_params.get('channel_id')
+        if channel_id is None:
+            raise ValidationError("channel_id is required")
+        try:
+            conversation = get_object_or_404(Conversation, channel_id=int(channel_id))
+        except ValueError:
+            raise ValidationError("channel_id must be an integer")
+        messages = self.queryset.filter(conversation=conversation)
+        queryset = MessageSerializer(messages, many=True)
+        return Response(queryset.data)

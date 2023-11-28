@@ -22,12 +22,13 @@ from django.views.generic import RedirectView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 
-from server.views import ServerViewSet, CategoryViewSet
+from server.views import ServerViewSet, CategoryViewSet, MessageViewSet
 from webchat.consumer import WebChatConsumer
 
 router = DefaultRouter()
 router.register('server', ServerViewSet)
 router.register('category', CategoryViewSet)
+router.register('messages', MessageViewSet)
 
 urlpatterns = [
     path('', RedirectView.as_view(url='api/ui')),

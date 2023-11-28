@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from server.models import Server, Channel, Category
+from webchat.models import Message
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -34,3 +35,10 @@ class ServerSerializer(serializers.ModelSerializer):
         if hasattr(obj, "num_members"):
             return obj.num_members
         return None
+
+
+class MessageSerializer(serializers.ModelSerializer):
+    sender = serializers.StringRelatedField()
+    class Meta:
+        model = Message
+        fields = "__all__"

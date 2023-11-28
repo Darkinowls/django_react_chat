@@ -29,8 +29,8 @@ const PrimaryAppBar = () => {
         <Box
             sx={{paddingTop: theme.primaryAppBar.height + "px", minWidth: 200}}
             role={"presentation"}
-            onClick={() => setSideBar(false)}
-            onKeyDown={() => setSideBar(false)}
+            onClick={getSideBarCallback(false)}
+            onKeyDown={getSideBarCallback(false)}
         >
             <ExploreCategories/>
         </Box>

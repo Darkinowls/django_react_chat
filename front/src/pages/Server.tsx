@@ -17,7 +17,7 @@ const Server = () => {
     const navigate = useNavigate()
     const {serverId, channelId} = useParams()
 
-    const {data, fetchCallback, loading, error} =
+    const {prevData, fetchCallback, error} =
         useCrud<IServer>([], `server/${serverId}`)
 
     useEffect(() => {
@@ -28,16 +28,16 @@ const Server = () => {
         if (!channelId) {
             return true
         }
-        return data
+        return prevData
             .some((server) => server.channel_server
                 .some((channel: IChannel) => channel.id.toString() === channelId))
-    }, [channelId, data])
+    }, [channelId, prevData])
 
     useEffect(() => {
-        if (!isValidChannelField() && data.length > 0) {
+        if (!isValidChannelField() && prevData.length > 0) {
             navigate(`/server/${serverId}`)
         }
-    }, [isValidChannelField, data, serverId])
+    }, [isValidChannelField, prevData, serverId])
 
 
     if (error) {
@@ -47,12 +47,14 @@ const Server = () => {
 
 
     return (
-        <Box sx={{display: "flex"}}>
+        <Box
+            sx={{display: "flex"}}
+        >
             <CssBaseline></CssBaseline>
             <PrimaryAppBar></PrimaryAppBar>
-            <PrimaryDraw><UserServers isOpen={true} servers={data}/></PrimaryDraw>
-            <SecondaryDraw><ServerChannels servers={data}/></SecondaryDraw>
-            <Main><MessageInterface/></Main>
+            <PrimaryDraw><UserServers isOpen={true} servers={prevData}/></PrimaryDraw>
+            <SecondaryDraw><ServerChannels servers={prevData}/></SecondaryDraw>
+            <Main><MessageInterface server={prevData[0]}/></Main>
         </Box>
     )
         ;
