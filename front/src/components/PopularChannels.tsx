@@ -26,7 +26,7 @@ type Props = {
 const PopularChannels: FC<Props> = ({isOpen}) => {
     const {
         prevData, fetchCallback
-    } = useCrud<Server>([], "server")
+    } = useCrud<Server>([], "server/")
 
     useEffect(() => {
         fetchCallback().then(() => console.log(prevData))

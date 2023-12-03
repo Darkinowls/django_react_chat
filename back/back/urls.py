@@ -21,7 +21,9 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
+from rest_framework_simplejwt.views import TokenRefreshView
 
+from account.views import AccountViewSet, JWTCookieTokenPairView, JWTCookieRefreshView, LogoutApiView, RegisterApiView
 from server.views import ServerViewSet, CategoryViewSet, MessageViewSet
 from webchat.consumer import WebChatConsumer
 
@@ -29,14 +31,19 @@ router = DefaultRouter()
 router.register('server', ServerViewSet)
 router.register('category', CategoryViewSet)
 router.register('messages', MessageViewSet)
+router.register('account', AccountViewSet, basename='account')
+router.register('register', RegisterApiView, basename='account')
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='api/ui')),
-    path('admin/', admin.site.urls),
-    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('api/ui/', SpectacularSwaggerView.as_view()),
-    path('api/', include(router.urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('', RedirectView.as_view(url='api/ui')),
+                  path('admin/', admin.site.urls),
+                  path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+                  path('api/ui/', SpectacularSwaggerView.as_view()),
+                  path('api/', include(router.urls)),
+                  path('api/token/', JWTCookieTokenPairView.as_view()),
+                  path('api/token/refresh/', JWTCookieRefreshView.as_view()),
+                  path('api/logout/', LogoutApiView.as_view()),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 websocket_urlpatterns = [
     path('ws/<int:serverId>/<int:channelId>', WebChatConsumer.as_asgi()),

@@ -1,8 +1,5 @@
-import {FC, FormEvent, useState} from 'react';
-import useWebSocket from "react-use-websocket";
+import {FC} from 'react';
 import {useParams} from "react-router-dom";
-import useCrud from "../hooks/useCrud.ts";
-import {IMessage} from "../@types/message";
 import {
     Avatar,
     Box,
@@ -18,46 +15,31 @@ import {
 import {IServer} from "../@types/server";
 import MessageInterfaceChannels from "./MessageInterfaceChannels.tsx";
 import Scroll from "./Scroll.tsx";
+import {useChatService} from "../services/ChatService.ts";
 
 type Props = {
     server: IServer
 }
 
+const formatTimeStamps = (datestamp: string): string => {
+    const dateObj = new Date(datestamp)
+    const formattedDate = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
+    const formattedTime = dateObj.toLocaleTimeString([],
+        {hour: '2-digit', minute: '2-digit', hour12: false})
+    return formattedDate + ' ' + formattedTime
+}
+
+
 const MessageInterface: FC<Props> = ({server}) => {
 
-    const [incomeMessage, setIncomeMessage] = useState<IMessage[]>([])
-    const [inputMessage, setInputMessage] = useState("")
-    const {serverId, channelId} = useParams()
 
+    const {serverId, channelId} = useParams()
     const theme = useTheme()
 
-    const socketUrl = channelId ? `ws://127.0.0.1:8000/ws/${serverId}/${channelId}` : null
-
-    const {fetchCallback} = useCrud<IMessage>([], `messages/?channel_id=${channelId}`)
-
-    const {sendJsonMessage} = useWebSocket(socketUrl, {
-        onOpen: async () => {
-            setIncomeMessage([])
-            const data = await fetchCallback()
-            setIncomeMessage(Array.isArray(data) ? data : [])
-            console.log("opened ws connection");
-        },
-        onError: (event) => console.log("error ws connection", event),
-        onClose: (event) => console.log("closed ws connection", event),
-        onMessage: (event) => {
-            console.log(event.data)
-            const data = JSON.parse(event.data)
-            setIncomeMessage((prev) => [...prev, data.message])
-        }
-    })
-
-    const formatTimeStamps = (datestamp: string): string => {
-        const dateObj = new Date(datestamp)
-        const formattedDate = `${dateObj.getMonth() + 1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
-        const formattedTime = dateObj.toLocaleTimeString([],
-            {hour: '2-digit', minute: '2-digit', hour12: false})
-        return formattedDate + ' ' + formattedTime
-    }
+    const {
+        incomeMessages,
+        sendJsonMessage,
+    } = useChatService(serverId!, channelId!)
 
     // @ts-ignore
     const sendViaKey = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -66,14 +48,14 @@ const MessageInterface: FC<Props> = ({server}) => {
         }
 
         e.preventDefault()
-        if (inputMessage.length === 0) {
+        if (e.target.value.length === 0) {
             return
         }
         sendJsonMessage({
             type: "message",
-            text: inputMessage,
+            text: e.target.value,
         })
-        setInputMessage("")
+        e.target.value = ""
     }
 
     return (
@@ -121,7 +103,7 @@ const MessageInterface: FC<Props> = ({server}) => {
                             bg: "background.paper"
 
                         }}>
-                            {incomeMessage.map((message) => {
+                            {incomeMessages.map((message) => {
                                 return (
 
                                     <ListItem key={message.id} alignItems={"flex-start"}>
@@ -193,7 +175,7 @@ const MessageInterface: FC<Props> = ({server}) => {
                         overflow: "hidden",
                         position: "relative",
                         bottom: 0,
-                        width: "100%"
+                        width: "100%",
                     }}>
 
                         <form
@@ -211,12 +193,9 @@ const MessageInterface: FC<Props> = ({server}) => {
                                     fullWidth={true}
                                     minRows={1}
                                     maxRows={4}
-                                    value={inputMessage}
                                     multiline={true}
                                     sx={{flexGrow: 1}}
                                     onKeyDown={sendViaKey}
-                                    onChange={e => setInputMessage(e.target.value)}
-
                                 >
 
                                 </TextField>

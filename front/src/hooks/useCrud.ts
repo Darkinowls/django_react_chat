@@ -1,5 +1,5 @@
-import useAxios from "../helpers/jwt_interceptor.ts";
-import {useCallback, useState} from "react";
+import useAxios from "../helpers/AxiosHelper.ts";
+import {useState} from "react";
 
 interface IUseCrud<T> {
     prevData: T[],

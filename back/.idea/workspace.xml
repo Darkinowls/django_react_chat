@@ -5,29 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec9f68c3-0e1e-4e4a-af6b-9618a61c1b53" name="Changes" comment="chat basic capabilities">
-      <change afterPath="$PROJECT_DIR$/../front/src/@types/message.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/components/MessageInterfaceChannels.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/409a4330-6844-465f-87ad-657655538c58/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webchat/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/@types/auth-service.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/const/LocalStorageConsts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/context/AuthServiceProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/helpers/AxiosHelper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/pages/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/pages/Register.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/pages/TestLogin.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/routing/AppRouter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/routing/ProtectedRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/services/AuthService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/services/ChatService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webchat/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webchat/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webchat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/ExploreCategories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/ExploreCategories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/helpers/jwt_interceptor.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/pages/Server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/Server.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/PrimaryAppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/PrimaryAppBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/templates/SecondaryDraw.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/templates/SecondaryDraw.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +79,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/grid_modeling&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PythonJob/recipe_app_api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -275,7 +286,11 @@
       <workItem from="1700851447804" duration="5531000" />
       <workItem from="1701073771489" duration="4843000" />
       <workItem from="1701101755310" duration="907000" />
-      <workItem from="1701160322289" duration="597000" />
+      <workItem from="1701160322289" duration="2604000" />
+      <workItem from="1701274890468" duration="27016000" />
+      <workItem from="1701517257509" duration="9824000" />
+      <workItem from="1701530052370" duration="2539000" />
+      <workItem from="1701622319011" duration="3973000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -402,13 +417,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webchat/consumer.py</url>
-          <line>20</line>
+          <line>24</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/views.py</url>
-          <line>156</line>
+          <line>159</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/account/auth.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Lib/site-packages/rest_framework/fields.py</url>
+          <line>621</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

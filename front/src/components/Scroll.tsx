@@ -6,7 +6,7 @@ type Props = {
 }
 
 
-const ScrollContainer = styled(Box)(({theme}) => ({
+const ScrollContainer = styled(Box)(() => ({
     height: `calc(100vh - 100px - 90px)`,
     overflowY: "scroll",
     "&::-webkit-scrollbar": {

@@ -11,15 +11,18 @@ class WebChatConsumer(AsyncJsonWebsocketConsumer):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.user = None
         self.channel: InMemoryChannelLayer = None
         self.channel_id = None
         self.server_id = None
-        self.user: AbstractUser = None
 
     async def connect(self):
-        self.channel: InMemoryChannelLayer = self.channel_layer
+        self.user: AbstractUser = self.scope["user"]
         await self.accept()
-        self.user = await get_user_model().objects.aget(id=1)
+        if not self.user.is_authenticated:
+            await self.close(code=4001)
+            return
+        self.channel: InMemoryChannelLayer = self.channel_layer
         self.channel_id = str(self.scope["url_route"]["kwargs"]["channelId"])
         await self.channel.group_add(self.channel_id, self.channel_name)
 
@@ -45,5 +48,6 @@ class WebChatConsumer(AsyncJsonWebsocketConsumer):
         await self.send_json(event)
 
     async def disconnect(self, close_code):
-        await self.channel.group_discard(self.channel_id, self.channel_name)
+        if self.channel_id is not None:
+            await self.channel.group_discard(self.channel_id, self.channel_name)
         await super().disconnect(close_code)

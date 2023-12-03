@@ -16,13 +16,15 @@ from .serializers import ServerSerializer, CategorySerializer, MessageSerializer
 class CategoryViewSet(viewsets.ViewSet):
     queryset = Category.objects.all()
     model = Category
+    permission_classes = [IsAuthenticated]
 
-    def list(self, r):
+    def list(self, _):
         serializer = CategorySerializer(self.queryset, many=True)
         return Response(serializer.data)
 
 
 class ServerViewSet(viewsets.ViewSet):
+
     """
     A viewset for interacting with Server objects.
 
@@ -30,7 +32,7 @@ class ServerViewSet(viewsets.ViewSet):
         model (type): The Django model class for Server objects.
         queryset (QuerySet): The initial queryset for retrieving Server objects.
     """
-
+    permission_classes = [IsAuthenticated]
     model = Server
     queryset = Server.objects.all()
 
@@ -132,6 +134,7 @@ class ServerViewSet(viewsets.ViewSet):
 class MessageViewSet(viewsets.ViewSet):
     model = Message
     queryset = Message.objects.all()
+    permission_classes = [IsAuthenticated]
 
     @message_list_docs
     def list(self, request: Request, *args, **kwargs):
