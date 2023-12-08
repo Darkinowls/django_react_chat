@@ -24,7 +24,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from account.views import AccountViewSet, JWTCookieTokenPairView, JWTCookieRefreshView, LogoutApiView, RegisterApiView
-from server.views import ServerViewSet, CategoryViewSet, MessageViewSet
+from server.views import ServerViewSet, CategoryViewSet, MessageViewSet, ServerMembershipViewSet
 from webchat.consumer import WebChatConsumer
 
 router = DefaultRouter()
@@ -32,7 +32,8 @@ router.register('server', ServerViewSet)
 router.register('category', CategoryViewSet)
 router.register('messages', MessageViewSet)
 router.register('account', AccountViewSet, basename='account')
-router.register('register', RegisterApiView, basename='account')
+router.register('register', RegisterApiView, basename='register'),
+router.register(r'membership/(?P<server_id>\d+)/membership', ServerMembershipViewSet, basename='membership'),
 
 urlpatterns = [
                   path('', RedirectView.as_view(url='api/ui')),
@@ -43,6 +44,7 @@ urlpatterns = [
                   path('api/token/', JWTCookieTokenPairView.as_view()),
                   path('api/token/refresh/', JWTCookieRefreshView.as_view()),
                   path('api/logout/', LogoutApiView.as_view()),
+
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 websocket_urlpatterns = [

@@ -14,8 +14,8 @@ import {useParams} from "react-router-dom";
 import {BASE_URL} from "../config.ts";
 import {MoreVert} from "@mui/icons-material";
 
-import ServerChannels from "./ServerChannels.tsx";
 import ExploreCategories from "./ExploreCategories.tsx";
+import JoinServerButton from "./JoinServerButton.tsx";
 
 
 type Props = {
@@ -107,6 +107,8 @@ const MessageInterfaceChannels: FC<Props> = ({server}) => {
                 </Typography>
 
                 <Box sx={{flexGrow: 1}}></Box>
+
+                <JoinServerButton></JoinServerButton>
 
                 <Box sx={{
                     display: {

@@ -69,7 +69,7 @@ const ExploreServers = () => {
                                     flexDirection: "column",
                                     // backgroundImage: "none"
                                 }}>
-                                <Link to={`server/${server.id}`} style={{textDecoration: "none", color: "inherit"}}>
+                                <Link to={`/server/${server.id}`} style={{textDecoration: "none", color: "inherit"}}>
 
                                     <CardMedia
                                         component={"img"}

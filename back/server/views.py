@@ -1,7 +1,7 @@
 from django.db.models import Count
-from drf_spectacular.utils import extend_schema, OpenApiParameter
-from rest_framework import viewsets
-from rest_framework.exceptions import ValidationError, AuthenticationFailed
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
+from rest_framework.exceptions import ValidationError
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
@@ -11,6 +11,36 @@ from server.models import Server, Category
 from webchat.models import Message, Conversation
 from .schema import server_list_docs, message_list_docs
 from .serializers import ServerSerializer, CategorySerializer, MessageSerializer
+
+
+class ServerMembershipViewSet(viewsets.ViewSet):
+    # permission_classes = [IsAuthenticated]
+
+    def create(self, request, server_id):
+        server = get_object_or_404(Server, id=int(server_id))
+        user = request.user
+        if server.member.filter(pk=user.pk).exists():
+            return Response({'error': 'You are already a member of this server.'}, status=status.HTTP_409_CONFLICT)
+        server.member.add(user)
+        return Response({'success': 'You have joined this server.'}, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['DELETE'])
+    def remove_member(self, request, server_id):
+        server = get_object_or_404(Server, pk=server_id)
+        user = request.user
+        if not server.member.filter(pk=user.pk).exists():
+            return Response({'error': 'Not a member'}, status=status.HTTP_409_CONFLICT)
+        if server.owner == user:
+            return Response({'error': 'Cannot remove owner'}, status=status.HTTP_400_BAD_REQUEST)
+        server.member.remove(user)
+        return Response({'success': 'User removed'}, status=status.HTTP_200_OK)
+
+    @action(detail=False, methods=['GET'])
+    def is_member(self, request, server_id):
+        server = get_object_or_404(Server, pk=server_id)
+        user = request.user
+        is_member = server.member.filter(pk=user.pk).exists()
+        return Response({'is_member': is_member}, status=status.HTTP_200_OK)
 
 
 class CategoryViewSet(viewsets.ViewSet):
@@ -24,7 +54,6 @@ class CategoryViewSet(viewsets.ViewSet):
 
 
 class ServerViewSet(viewsets.ViewSet):
-
     """
     A viewset for interacting with Server objects.
 

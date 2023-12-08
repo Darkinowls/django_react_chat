@@ -6,25 +6,25 @@ import LocalStorageConsts from "../const/LocalStorageConsts.ts";
 import {useNavigate} from "react-router-dom";
 
 
-const getUserDetails = async (): Promise<string | Error> => {
-    const userId = localStorage.getItem(LocalStorageConsts.UserId)
-    if (userId === null) {
-        return Error("User id not found");
-    }
-    try {
-        const response = await axios.get(
-            BASE_API_URL + `/account?user_id=${userId}`,
-            {
-                withCredentials: true,
-            }
-        );
-        const username = response.data.username;
-        localStorage.setItem(LocalStorageConsts.Username, username)
-        return username;
-    } catch (e) {
-        return e as Error;
-    }
-}
+// const getUserDetails = async (): Promise<string | Error> => {
+//     const userId = localStorage.getItem(LocalStorageConsts.UserId)
+//     if (userId === null) {
+//         return Error("User id not found");
+//     }
+//     try {
+//         const response = await axios.get(
+//             BASE_API_URL + `/account?user_id=${userId}`,
+//             {
+//                 withCredentials: true,
+//             }
+//         );
+//         const username = response.data.username;
+//         localStorage.setItem(LocalStorageConsts.Username, username)
+//         return username;
+//     } catch (e) {
+//         return e as Error;
+//     }
+// }
 
 export const useAuthService = (): AuthServiceProps => {
     const navigate = useNavigate()

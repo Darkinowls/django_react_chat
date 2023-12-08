@@ -4,41 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9f68c3-0e1e-4e4a-af6b-9618a61c1b53" name="Changes" comment="chat basic capabilities">
-      <change afterPath="$PROJECT_DIR$/account/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webchat/middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/@types/auth-service.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/const/LocalStorageConsts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/context/AuthServiceProvider.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/helpers/AxiosHelper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/pages/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/pages/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/pages/TestLogin.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/routing/AppRouter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/routing/ProtectedRoute.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/services/AuthService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../front/src/services/ChatService.ts" afterDir="false" />
+    <list default="true" id="ec9f68c3-0e1e-4e4a-af6b-9618a61c1b53" name="Changes" comment="feat: auth is done">
+      <change afterPath="$PROJECT_DIR$/../front/src/components/JoinServerButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/components/MembershipCheck.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/context/MemberContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../front/src/services/MembershipService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/back/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webchat/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/webchat/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/MessageInterface.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/PopularChannels.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Scroll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/helpers/jwt_interceptor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/hooks/useCrud.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/pages/Server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/pages/Server.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/ExploreServers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/MessageInterfaceChannels.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/MessageInterfaceChannels.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/routing/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/routing/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/services/AuthService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/services/AuthService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +58,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PythonJob/recipe_app_api&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PythonProjects/grid_modeling&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -95,7 +74,87 @@
       <recent name="D:\PythonJob\DjangoReactChat\back" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.back">
+  <component name="RunManager" selected="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_remove_member">
+    <configuration name="Test: server.tests.ServerMembershipViewSetTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="back" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="server.tests.ServerMembershipViewSetTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: server.tests.ServerMembershipViewSetTest.test_create_membership_success" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="back" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="server.tests.ServerMembershipViewSetTest.test_create_membership_success" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: server.tests.ServerMembershipViewSetTest.test_is_member" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="back" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="server.tests.ServerMembershipViewSetTest.test_is_member" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: server.tests.ServerMembershipViewSetTest.test_remove_member" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="back" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="server.tests.ServerMembershipViewSetTest.test_remove_member" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: server.tests.ServerTestCase" type="DjangoTestsConfigurationType" temporary="true">
       <module name="back" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,66 +169,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="server.tests.ServerTestCase" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: server.tests.ServerTestCase.test_create_admin" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="back" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="server.tests.ServerTestCase.test_create_admin" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: server.tests.ServerTestCase.test_server" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="back" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="server.tests.ServerTestCase.test_server" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: server.tests.ServerTestCase.test_server_create" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="back" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="server.tests.ServerTestCase.test_server_create" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -245,19 +244,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.back" />
       <item itemvalue="Django Server.Main" />
+      <item itemvalue="Django Server.back" />
+      <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_is_member" />
+      <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_remove_member" />
+      <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest" />
+      <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_create_membership_success" />
       <item itemvalue="Django tests.Test: server.tests.ServerTestCase" />
-      <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_create_admin" />
-      <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_server" />
-      <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_server_create" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_create_admin" />
+        <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_remove_member" />
+        <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_create_membership_success" />
+        <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest.test_is_member" />
+        <item itemvalue="Django tests.Test: server.tests.ServerMembershipViewSetTest" />
         <item itemvalue="Django tests.Test: server.tests.ServerTestCase" />
-        <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_server_create" />
-        <item itemvalue="Django tests.Test: server.tests.ServerTestCase.test_server" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +291,11 @@
       <workItem from="1701274890468" duration="27016000" />
       <workItem from="1701517257509" duration="9824000" />
       <workItem from="1701530052370" duration="2539000" />
-      <workItem from="1701622319011" duration="3973000" />
+      <workItem from="1701622319011" duration="5027000" />
+      <workItem from="1701634106846" duration="2000" />
+      <workItem from="1701678359729" duration="86000" />
+      <workItem from="1701852264102" duration="6054000" />
+      <workItem from="1701970548687" duration="6285000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -388,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700844122795</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: auth is done">
+      <option name="closed" value="true" />
+      <created>1701626697126</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701626697126</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +418,8 @@
     <MESSAGE value="Dark mode on react and bug fixes on django" />
     <MESSAGE value="cookies" />
     <MESSAGE value="chat basic capabilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat basic capabilities" />
+    <MESSAGE value="feat: auth is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: auth is done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -422,7 +436,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/server/views.py</url>
-          <line>159</line>
+          <line>188</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -435,6 +449,26 @@
           <line>621</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/tests.py</url>
+          <line>90</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/tests.py</url>
+          <line>105</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/tests.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/views.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -446,9 +480,14 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase_test_server.coverage" NAME="Test: server.tests.ServerTestCase.test_server Coverage Results" MODIFIED="1700643348063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase_test_server.coverage" NAME="Test: server.tests.ServerTestCase.test_server Coverage Results" MODIFIED="1702031685454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerMembershipViewSetTest.coverage" NAME="Test: server.tests.ServerMembershipViewSetTest Coverage Results" MODIFIED="1702031705321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests.coverage" NAME="Test: server.tests Coverage Results" MODIFIED="1702030071732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase_test_server_create.coverage" NAME="Test: server.tests.ServerTestCase.test_server_create Coverage Results" MODIFIED="1700643387741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase_test_create_admin.coverage" NAME="Test: server.tests.ServerTestCase.test_create_admin Coverage Results" MODIFIED="1700645212463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase.coverage" NAME="Test: server.tests.ServerTestCase Coverage Results" MODIFIED="1700644868570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerMembershipViewSetTest_test_is_member.coverage" NAME="Test: server.tests.ServerMembershipViewSetTest.test_is_member Coverage Results" MODIFIED="1702031983598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerMembershipViewSetTest_test_create_membership_success.coverage" NAME="Test: server.tests.ServerMembershipViewSetTest.test_create_membership_success Coverage Results" MODIFIED="1702032443067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerMembershipViewSetTest_test_remove_member.coverage" NAME="Test: server.tests.ServerMembershipViewSetTest.test_remove_member Coverage Results" MODIFIED="1702032508786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/back$Test__server_tests_ServerTestCase.coverage" NAME="Test: server.tests.ServerTestCase Coverage Results" MODIFIED="1702031697968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
